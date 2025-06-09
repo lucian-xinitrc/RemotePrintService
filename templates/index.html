@@ -21,8 +21,6 @@
 						<p><strong>Status Message: </strong> {{ message }}</p>
 			        	<p><strong>Status:</strong> {{ status }}</p>
 			        	<p><strong>Filename:</strong> {{ filename }}</p>
-			        </div>
-			        <div class="box">
 			        	<form method="post" enctype="multipart/form-data" action="/print">
 			        		<input type="text" name="filename" value="{{ filename }}">
 							<input type="submit" name="submit">
