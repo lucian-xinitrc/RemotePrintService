@@ -2,11 +2,11 @@ body {
 	background:white;
 	display:flex;
 	justify-content:center;
+	font-family:Helvetica;
 	padding-top:10%;
 }
 
 h1 {
-	font-family:Helvetica;
 	text-align:center;
 	color:#6C9182;
 	padding:20px;
