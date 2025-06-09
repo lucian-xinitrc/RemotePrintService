@@ -7,7 +7,7 @@ UPLOAD_FOLDER = 'uploads'
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-@app.route("/")
+@app.route("/index")
 def home():
 	return render_template("index.html")
 
@@ -23,7 +23,7 @@ def upload():
 @app.route("/print", methods=['GET', 'POST'])
 def print():
 	subprocess.run(['lp', f"uploads/{request.form['filename']}"], check=True)
-	return redirect(url_for('/'))
+	return redirect(url_for('index'))
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', debug=True)
