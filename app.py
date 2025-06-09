@@ -22,7 +22,7 @@ def upload():
 
 @app.route("/print", methods=['GET', 'POST'])
 def print():
-	subprocess.run(f'lp uploads/{request.form['filename']}')
+	subprocess.run(f"lp uploads/{request.form['filename']}")
 	return "Printing"
 
 if __name__ == "__main__":
