@@ -17,9 +17,11 @@
 						<input type="submit" name="submit">
 					</form>
 					{% else %}
-						<p><strong>{{ message }}</strong></p>
-			        	<p><strong>{{ status }}</strong></p>
-			        	<p><strong>{{ filename }}</strong></p>
+					<div class="box">
+						<p><strong>Status Message: </strong> {{ message }}</p>
+			        	<p><strong>Status:</strong> {{ status }}</p>
+			        	<p><strong>Filename:</strong> {{ filename }}</p>
+			        </div>
 			        	<form method="post" enctype="multipart/form-data" action="/print">
 			        		<input type="text" name="filename" value="{{ filename }}">
 							<input type="submit" name="submit">
