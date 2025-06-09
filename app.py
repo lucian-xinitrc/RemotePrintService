@@ -7,8 +7,8 @@ UPLOAD_FOLDER = 'uploads'
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-@app.route("/index")
-def home():
+@app.route("/")
+def index():
 	return render_template("index.html")
 
 @app.route("/", methods=['GET', 'POST'])
