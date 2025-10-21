@@ -27,7 +27,7 @@ http://localhost:5000/
 
 **Set up the Default Printer across HPLIP**
 *The model works well with HP Printers*
-```
+```bash
 lpadmin -d <printer name>
 ```
 
