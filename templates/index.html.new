@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Printer Utility</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+	<div class="box">
+		<div class="box">
+			<div class="card">
+				{% if status != 200 %}
+					<form method="post" enctype="multipart/form-data">
+						<h1>Select a file</h1>
+						<input type="file" name="file" style="text-align:center;">
+						<div class="center">
+							<input type="submit" name="submit" value="Upload">
+						</div>
+					</form>
+					{% else %}
+					<div class="box">
+						<h1>Print the file</h1>
+						<p><strong>Status Message: </strong> {{ message }}</p>
+			        	<p><strong>Status:</strong> {{ status }}</p>
+			        	<p><strong>Filename:</strong> {{ filename }}</p>
+			        	<form method="post" enctype="multipart/form-data" action="/print">
+			        		<input type="text" name="filename" value="{{ filename }}">
+							<input type="submit" name="submit" value="Print">
+			        	</form>
+			        </div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

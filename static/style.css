@@ -29,10 +29,19 @@ h1 {
 	margin:10px;
 }
 
-button, input {
+input {
 	padding:10px;
 	font-weight:bold;
 	border:0px;
+	color:white;
+	background-color:#6C9182;
+	box-shadow:0 0 10px 0 lightgray;
+}
+
+button {
+	padding:10px;
+	font-weight:bold;
+	border:10px solid #6C9182;
 	color:white;
 	background-color:#6C9182;
 	box-shadow:0 0 10px 0 lightgray;

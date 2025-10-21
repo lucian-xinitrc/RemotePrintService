@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Remote Printer Service</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 <style>
 	
 </style>
-<body>
-	<div class="box">
-		<h1>Welcome to Printer Page</h1>
+<body class="bg-slate-950 text-white content-center h-screen">
+	
+	<div class="w-full flex justify-center">		
 		<div class="box">
-			<div class="card">
+			<h1 class="text-center text-4xl">Remote Print Service</h1>
+			<div class="card text-white py-10 sm:p-10 my-10">
 				{% if status != 200 %}
-					<form method="post" enctype="multipart/form-data">
-						<input type="file" name="file">
-						<input type="submit" name="submit">
+					<form method="post" enctype="multipart/form-data" class="grid sm:block gap-5">
+						<input class="border border-solid border-slate-900 rounded-full px-5 py-2 shadow-xl/20 transition duration-700 ease-in-out hover:border-white hover:shadow-xl/30" type="file" name="file">
+						<input class="border border-solid border-slate-900 rounded-full px-5 sm:ml-2 py-2 shadow-xl/30 transition duration-700 ease-in-out hover:bg-white hover:text-black" type="submit" name="submit">
 					</form>
 					{% else %}
 					<div class="box">
-						<p><strong>Status Message: </strong> {{ message }}</p>
-			        	<p><strong>Status:</strong> {{ status }}</p>
-			        	<p><strong>Filename:</strong> {{ filename }}</p>
-			        	<form method="post" enctype="multipart/form-data" action="/print">
-			        		<input type="text" name="filename" value="{{ filename }}">
-							<input type="submit" name="submit">
+						<div class="relative overflow-x-auto">
+    							<table class="w-full text-sm text-left rtl:t ext-right text-gray-500 dark:text-gray-400">
+								<thead class="text-xs text-gray-700 uppercase text-black bg-white rounded-full">
+            							<tr>
+                							<th scope="col" class="px-6 py-3 text-center">
+                    								Filename
+                							</th>
+                							<th scope="col" class="px-6 py-3 text-center">
+                    								Status
+                							</th>
+                							<th scope="col" class="px-6 py-3 text-center">
+                	    							Message
+                							</th>
+            							</tr>
+        						</thead>
+        						<tbody>
+            							<tr class="">
+                							<th scope="row" class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+										{{ filename }}
+                							</th>
+                							<td class="px-6 py-4 text-center">
+										{{ status }}
+                							</td>
+                							<td class="px-6 py-4 text-center">
+										{{ message }}
+                							</td>
+            							</tr>
+        						</tbody>
+    							</table>
+						</div>
+
+			        	<form class="flex justify-center p-10 " method="post" enctype="multipart/form-data" action="/print">
+			        		<input class="border border-solid border-slate-900 rounded-full px-5 py-2 shadow-xl/20 transition duration-700 ease-in-out hover:border-white hover:shadow-xl/30" type="text" name="filename" value="{{ filename }}">
+							<input class="border border-solid border-slate-900 rounded-full px-5 sm:ml-2 py-2 shadow-xl/30 transition duration-700 ease-in-out hover:bg-white hover:text-black" type="submit" name="submit">
+							
 			        	</form>
 			        </div>
 				{% endif %}
@@ -31,4 +64,3 @@
 		</div>
 	</div>
 </body>
-</html>
