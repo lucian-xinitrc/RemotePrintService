@@ -18,7 +18,7 @@
 				{% if status != 200 %}
 					<form method="post" enctype="multipart/form-data" class="grid sm:block gap-5">
 						<input class="border border-solid border-slate-900 rounded-full px-5 py-2 shadow-xl/20 transition duration-700 ease-in-out hover:border-white hover:shadow-xl/30" type="file" name="file">
-						<input class="border border-solid border-slate-900 rounded-full px-5 sm:ml-2 py-2 shadow-xl/30 transition duration-700 ease-in-out hover:bg-white hover:text-black" type="submit" name="submit">
+						<input class="border border-solid border-slate-900 rounded-full px-5 sm:ml-2 py-2 shadow-xl/30 transition duration-700 ease-in-out hover:bg-white hover:text-black" type="submit" value="Upload" name="submit">
 					</form>
 					{% else %}
 					<div class="box">
@@ -55,7 +55,7 @@
 
 			        	<form class="flex justify-center p-10 " method="post" enctype="multipart/form-data" action="/print">
 			        		<input class="border border-solid border-slate-900 rounded-full px-5 py-2 shadow-xl/20 transition duration-700 ease-in-out hover:border-white hover:shadow-xl/30" type="text" name="filename" value="{{ filename }}">
-							<input class="border border-solid border-slate-900 rounded-full px-5 sm:ml-2 py-2 shadow-xl/30 transition duration-700 ease-in-out hover:bg-white hover:text-black" type="submit" name="submit">
+							<input class="border border-solid border-slate-900 rounded-full px-5 sm:ml-2 py-2 shadow-xl/30 transition duration-700 ease-in-out hover:bg-white hover:text-black" type="submit" value="Print" name="submit">
 							
 			        	</form>
 			        </div>
